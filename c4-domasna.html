@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc</title>
+    <link rel="stylesheet" href="c4-domasna.css">
+
+    <script>
+        function calc() {
+            var n1 = parseInt(document.querySelector('.n1').value);
+            var n2 = parseInt(document.querySelector('.n2').value);
+            var operator = document.querySelector('.operators').value;
+            
+            if(operator === '+') {
+                document.querySelector('.result').value = n1+n2;
+            }
+
+            if(operator === '-') {
+                document.querySelector('.result').value = n1-n2;
+            }
+
+            if(operator === '/') {
+                document.querySelector('.result').value = n1/n2;
+            }
+
+            if(operator === 'x') {
+                document.querySelector('.result').value = n1*n2;
+            }
+        }
+
+        function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+}
+
+
+    document.querySelector('.conButton');
+    addEventListener('click', convert, false);
+
+    function convert () {
+        var zaF = document.querySelector('.fValue').value;
+        var zaC = ( zaF - 32) * (5/9);
+        document.querySelector('.cValue').innerHTML = zaC;
+    }
+
+    </script>
+    
+
+</head>
+<body>
+    
+   <div class="text-input">
+
+    <input type="text" class="n1">
+    
+    <select name="" class="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="x">x</option>
+    </select>
+    
+    <input type="text" class="n2">
+
+    <button onclick="calc();">=</button>
+    <input type="text" class="result">
+
+    <br><br><br>
+    
+    <input type="number" class="fValue">
+    <button type="button" class="conButton">Convert</button>
+    <input type="text" class="cValue">
+
+   </div>
+
+</body>
+</html>
